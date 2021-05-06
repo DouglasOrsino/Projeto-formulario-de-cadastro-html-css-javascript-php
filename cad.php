@@ -2,33 +2,29 @@
 
 if (isset($_POST['email']) && !empty($_POST['email'])) {
 
-	$chamado = addslashes($_POST['chamado']);
-	$empresa = addslashes($_POST['empresa']);
-	$requisitante = addslashes($_POST['requisitante']);
+	$nome = addslashes($_POST['nome']);
 	$email = addslashes($_POST['email']);
-	$responsavel = addslashes($_POST['responsavel']);
-	$prioridade = addslashes($_POST['prioridade']);
-	$status = addslashes($_POST['status']);
-	$descricao = addslashes($_POST['descricao']);
-	$dt_start = addslashes($_POST['dt_start']);
-	$dt_prev = addslashes($_POST['dt_prev']);
-	$dt_finish = addslashes($_POST['dt_finish']);
+	$cpf = addslashes($_POST['cpf']);
+	$telefone = addslashes($_POST['phone']);
+	$cep = addslashes($_POST['cep']);
+	$logradouro = addslashes($_POST['logradouro']);
+	$bairro = addslashes($_POST['bairro']);
+	$cidade = addslashes($_POST['cidade']);
+	$estado = addslashes($_POST['estado']);
 
 	$to = "douglas.orsino@al.infnet.edu.br";
 	$subject = "Testando bd";
-	$body = "Chamado: ".$chamado. "\r\n".
-			"Empresa: ".$empresa. "\r\n".
-			"Requisitante: ".$requisitante. "\r\n".
+	$body = "Nome: ".$nome. "\r\n".
 			"Email: ".$email. "\r\n".
-			"Técnico Responsável: ".$responsavel. "\r\n".
-			"Prioridade: ".$prioridade. "\r\n".
-			"Status: ".$status. "\r\n".
-			"Descrição: ".$descricao. "\r\n".
-			"Data Início: ".$dt_start. "\r\n".
-			"Data Previsão: ".$dt_prev. "\r\n".
-			"Data Término: ".$dt_finish;
+			"CPF/CNPJ: ".$cpf. "\r\n".
+			"Telefone: ".$telefone. "\r\n".
+			"CEP: ".$cep. "\r\n".
+			"Logradouro e numero: ".$logradouro. "\r\n".
+			"Bairro: ".$bairro. "\r\n".
+			"Cidade: ".$cidade. "\r\n".
+			"Estado: ".$estado. "\r\n".
 	$header = "From:douglas.orsino@protonmail.com". "\r\n"
-				."Reply-To:".$chamado."\r\n"
+				."Reply-To:".$email."\r\n"
 				."X=Mailer:PHP/".phpversion();
 
 
@@ -126,7 +122,7 @@ if (isset($_POST['email']) && !empty($_POST['email'])) {
 		<fieldset class="grupo">
 			<div class="campo">
 				<legend>Selecione o Estado:</legend>
-					<select name="uf" id="estado">
+					<select name="estado" id="estado">
 					<option value="AC">Acre</option>
 					<option value="AL">Alagoas</option>
 					<option value="AP">Amapá</option>
